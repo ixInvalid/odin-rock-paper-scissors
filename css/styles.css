@@ -27,6 +27,57 @@ body {
     font-weight: bold;
 }
 
+#scoreboard {
+    height: 25vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border {
+    height: 150px;
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border: #000 12px solid;
+    border-radius: 4px;
+}
+
+.player.label,
+.computer.label {
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFF;
+    background: #505050;
+    border-radius: 4px;
+}
+
+.player.label {
+    left: -55px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.computer.label {
+    right: -70px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.score {
+    display: flex;
+    font-size: 50px;
+    font-weight: bold;
+}
+
 .footer {
     height: 80px;
     display: flex;
