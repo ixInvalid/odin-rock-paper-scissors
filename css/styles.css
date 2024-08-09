@@ -78,6 +78,18 @@ body {
     font-weight: bold;
 }
 
+#result {
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#message {
+    font-size: 32px;
+    font-weight: bold;
+}
+
 .footer {
     height: 80px;
     display: flex;
