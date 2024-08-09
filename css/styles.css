@@ -79,7 +79,7 @@ body {
 }
 
 #result {
-    height: 5vh;
+    height: 10vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,6 +88,36 @@ body {
 #message {
     font-size: 32px;
     font-weight: bold;
+}
+
+#selection {
+    height: calc(65vh - 180px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.selection {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.select {
+    cursor: pointer;
+}
+
+img {
+    height: 200px;
+    width: 200px;
+}
+
+.caption {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
 }
 
 .footer {
