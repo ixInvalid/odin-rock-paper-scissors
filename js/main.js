@@ -1,13 +1,12 @@
 let date = new Date().getFullYear();
-
 document.getElementById("year").innerHTML = `${date}`;
 
 let humanScore = 0;
 let computerScore = 0;
 
 const selection = Array.from(document.querySelectorAll('.select'));
-const message = document.getElementById('.message');
-const scorePlayer = document.querySelector('.user.score');
+const message = document.getElementById('message');
+const scorePlayer = document.querySelector('.player.score');
 const scoreComputer = document.querySelector('.computer.score');
 
 selection.forEach((box) =>
@@ -15,7 +14,7 @@ selection.forEach((box) =>
         if (humanScore >= 5 || computerScore >= 5) {
             return;
         }
-        const humanSelection = box.classList[1].toUpperCase();
+        const humanSelection = box.id.toUpperCase();
         playGame(humanSelection);
     })
 );
@@ -58,5 +57,24 @@ function playRound(humanSelection, computerSelection) {
         result = `You Lose! Human: ${humanSelection} Computer: ${computerSelection}`;
     }
 
-    return result
+    return result;
+}
+
+function playGame(playerSelect){
+    const humanSelection = playerSelect;
+    const computerSelection = getComputerSelection();
+
+    let roundResult = playRound(humanSelection, computerSelection);
+
+    scorePlayer.textContent = humanScore;
+    scoreComputer.textContent = computerScore;
+    message.textContent = roundResult;
+
+    if (humanScore >= 5 && computerScore < 5) {
+        message.textContent = 'Game Over. You Win!';
+    } else if (humanScore < 5 && computerScore >= 5) {
+        message.textContent = 'Game Over. You Lose!';
+    } else if (humanScore === 5 && computerScore === 5){
+        message.textContent = 'Game Over. You Tied!';
+    }
 }
